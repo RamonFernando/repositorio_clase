@@ -1,0 +1,239 @@
+> Seccion 9 BLOG CAFÉ - Creando un proyecto HTML y CSS
+
+/** Utilidades **/
+  - BEM:
+    La metodología BEM se enfoca en proporcionar una estructura de nomenclatura clara y predecible 
+    que hace que el CSS sea más legible y mantenible. Al seguir BEM, es más fácil entender cómo se 
+    relacionan los estilos con los elementos HTML y cómo se pueden reutilizar en diferentes partes 
+    del sitio web sin causar conflictos.
+    Conceptos en BEM:
+    1- Block (Bloque): Un bloque es una entidad independiente y autónoma en tu interfaz de usuario. 
+    Un bloque puede ser cualquier elemento en la página que tenga un propósito específico, como 
+    un encabezado, un menú de navegación, un botón, un formulario, etc. Los bloques se representan 
+    en HTML como clases CSS independientes y se nombran en minúsculas y sin guiones, utilizando 
+    guiones bajos para separar palabras. Por ejemplo:
+        <div class="boton"></div>
+        <nav class="menu-navegacion"></nav>
+        <form class="formulario"></form>
+    2- Element (Elemento): Un elemento es una parte de un bloque que no tiene un propósito independiente. 
+    Los elementos se representan en HTML como clases CSS que están anidadas dentro de las clases de bloques 
+    correspondientes. Se utiliza un doble guion bajo __ para separar el bloque del elemento. Por ejemplo:
+    <div class="boton">
+        <span class="boton__texto"></span>
+    </div>
+    3- Modifier (Modificador): Un modificador es una variación o estado de un bloque o elemento. Los 
+    modificadores se representan en HTML como clases CSS adicionales que se agregan a un bloque o elemento 
+    para cambiar su apariencia o comportamiento. Se utiliza un doble guion -- para separar el bloque o 
+    elemento del modificador. Por ejemplo:
+    <div class="boton boton--primario"></div>
+    <div class="formulario formulario--error"></div>
+
+Video 81 (El proyecto finalizado)
+
+Video 82 (Primeros pasos con el proyecto (Descarga de materiales aquí))
+
+Video 83 (Añadiendo CSS Global)
+
+    /*Custon property, CSS Global y Utilidades*/
+    :root {
+        /*custom property*/
+        --fuenteHeading: 'PT Sans', sans-serif;
+        --fuenteParrafos: 'Open Sans', sans-serif;
+        --primario: #784d3c;
+        --blanco: #ffffff;
+        --negro: #000000;
+    }
+
+    html{
+        box-sizing: border-box;
+        font-size: 62,5%; /*1rem = 10px*/
+    }
+    *, *:before, *:after{
+        box-sizing: inherit;
+    }
+    body{
+        font-family: var(--fuenteParrafos);
+        font-size: 1.6rem;/*tamaño de fuente*/
+        line-height: 2;/*interlineado*/
+    }
+
+    /** Globales **/
+    .contenedor{
+        max-width: 120rem;
+        width: 90%;
+        margin: auto;
+    }
+    a {
+        text-decoration: none;
+    }
+    h1, h2, h3, h4 {
+        font-family: var(--fuenteHeading);
+    }
+    h1{
+        font-size: 4.8rem;
+    }
+    h2{
+        font-size: 4rem;
+    }
+    h3{
+        font-size: 3.2rem;
+    }
+    h4{
+        font-size: 2.8rem;
+    }
+    img{
+        max-width: 100%;
+    }
+    /** Utilidades **/
+    .no-margin{
+        margin: 0;
+    }
+    .no-padding{
+        padding: 0;
+    }
+    .centrar-texto{
+        text-align: center;
+    }
+Video 84 (Creando Header)
+    /*HTML*/
+    <header class="header">
+        <div class="header__texto">
+            <h2 class="no-margin">Blog de Café con consejos y cursos</h2>
+            <p class="no-margin">Aprende de los expertos con las mejores recetas y consejos</p>
+        </div>
+    </header>
+
+Video 85 (CSS al Header)
+
+Video 86 (Creando Blog)
+
+    Ejemplo de Blog
+     <article class="entrada">
+        <div class="entrada__imagen">
+            <img src="blogdecafe_inicio/img/blog1.jpg" alt="imagen blog">
+        </div>
+        <div class="entrada__contenido">
+            <h4 class="no-margin">Tipos de granos de café</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam optio facilis quidem, 
+                numquam nesciunt praesentium earum eos, amet aut accusamus asperiores commodi ipsa 
+                    dolorum error aliquid odio laudantium cumque perferendis.</p>
+            <a class="boton boton--primario" href="entrada.html">Leer Entrada</a>
+        </div>
+    </article> 
+
+Video 87 (finalizado Blog)
+
+    Los tipos de display son, inlaine, inline-block, flex, block, grid.
+
+    Ejemplo de boton: CSS
+    .boton{
+        display: block;
+        font-family: var(--fuenteHeading);
+        color: var(--blanco);
+        text-align: center;
+        padding: 1rem 3rem;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 2rem;
+    }
+
+Video 88 (Creando la barra lateral)
+
+        Ejemplo de Listas: HTML Desordenada
+        <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>PHP</li>
+            <li>MySQL</li>
+        </ul>
+        Ejemplo de Listas: HTML Ordenada
+        <ol>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>PHP</li>
+            <li>MySQL</li>
+        </ol>
+
+Video 89 (Creando el footer)
+
+Video 90 (Creando la pagina de Nosotros)
+
+    Ejemplo 1 Flex y Grid
+    @media (min-width: 768px){ 
+        .sobre-nosotros{
+        display: flex;
+        justify-content: space-between;
+        /*gap: 2rem;*/
+        
+        }
+        .sobre-nosotros__imagen,
+        .sobre-nosotros__texto{
+            /*Tambien se le puede poner un width:50%;*/
+            flex-basis: calc(50% - 1rem); 
+        }
+        /*.sobre-nosotros{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 2rem;
+            }*/
+
+    }
+    Ejemplo 2 Flex y Factor de crecimiento
+    @media (min-width: 768px){ 
+        .sobre-nosotros{
+            display: flex;
+            justify-content: space-between;
+            /*gap: 2rem;*/
+            
+        }
+        .sobre-nosotros__texto{
+                flex: 0 0 calc(50% - 1rem);
+        }
+        .sobre-nosotros__imagen{
+                flex: 0 0 calc(50% - 1rem);
+        }
+
+    }
+    Ejemplo 3 Grid
+    @media (min-width: 768px){ 
+    
+        .sobre-nosotros{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 2rem;
+        }
+
+    }
+
+Video 91 (Desarrollando la pagina de Cursos)
+
+Video 92 (Creando la página de entrada de Blog)
+
+Video 93 (HTML para la pagina de contacto)
+
+Video 94 (CSS Formulario de contacto)
+
+    Ejemplo de Formulario en HTML
+    <form class="formulario">
+            <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input type="text" placeholder=" Tu Nombre" id="nombre">
+            </div>
+            <div class="email">
+                <label for="email">E-mail</label>
+                <input type="email" placeholder=" Tu Email" id="email">
+            </div>
+            <div class="campo">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" placeholder="Escribe un mensaje aquí"></textarea>
+            </div>
+            <div class="campo">
+                <input type="submit" value="Enviar" class="boton boton--primario">
+            </div>
+    </form>
+
+
+
