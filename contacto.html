@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogDeCafé</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&
-    family=Open+Sans&family=PT+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <title>BlogDeCafe</title>
 </head>
 <body>
     <header class="header">
@@ -37,8 +34,47 @@
         </div>
     </header>
 
-    <main class="contenedor">
-         <h3 class="centrar-texto">Contacto</h3>  
+    <main class="contenedor contenedor-contacto">
+        <h3 class="centrar-texto">Contacto</h3>  
+         
+        <div class="contacto-bg"></div>
+         
+        <form class="formulario border-radius">
+            <!--NOMBRE-->
+            <div class="campo">
+                <label class="campo__label" for="nombre">Nombre</label>
+                <input  
+                    class="campo__field border-radius"
+                    type="text" 
+                    placeholder=" Tu Nombre" 
+                    id="nombre"
+                >    
+            </div>
+            <!--E-MAIL-->
+            <div class="campo">
+                <label class="campo__label" for="email">E-mail</label>
+                <input  
+                    class="campo__field border-radius"
+                    type="email" 
+                    placeholder=" Tu Email" 
+                    id="email"
+                >
+            </div>
+            <!--TEXTAREA-->
+            <div class="campo">
+                <label class="campo__label" for="mensaje">Mensaje</label>
+                <textarea 
+                class="campo__field campo__field--textarea border-radius"
+                placeholder="Escribe un mensaje aquí" 
+                id="mensaje"></textarea>
+            </div>
+            <!--BOTON-->
+            <div class="campo">
+                <input  type="submit" 
+                        value="Enviar" 
+                        class="boton boton--primario">
+            </div>
+         </form>
     </main><!--.main-->
     <footer class="footer">
         <div class="contenedor">
@@ -59,5 +95,7 @@
         </div>
 
     </footer>
+    <!--Scripts para Java Script-->
+    <script src="js/modernizr.js"></script>
 </body>
 </html>

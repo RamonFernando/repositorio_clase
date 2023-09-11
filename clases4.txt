@@ -1,32 +1,65 @@
 > Seccion 9 BLOG CAFÉ - Creando un proyecto HTML y CSS
 
 /** Utilidades **/
-  - BEM:
-    La metodología BEM se enfoca en proporcionar una estructura de nomenclatura clara y predecible 
-    que hace que el CSS sea más legible y mantenible. Al seguir BEM, es más fácil entender cómo se 
-    relacionan los estilos con los elementos HTML y cómo se pueden reutilizar en diferentes partes 
-    del sitio web sin causar conflictos.
-    Conceptos en BEM:
-    1- Block (Bloque): Un bloque es una entidad independiente y autónoma en tu interfaz de usuario. 
-    Un bloque puede ser cualquier elemento en la página que tenga un propósito específico, como 
-    un encabezado, un menú de navegación, un botón, un formulario, etc. Los bloques se representan 
-    en HTML como clases CSS independientes y se nombran en minúsculas y sin guiones, utilizando 
-    guiones bajos para separar palabras. Por ejemplo:
-        <div class="boton"></div>
-        <nav class="menu-navegacion"></nav>
-        <form class="formulario"></form>
-    2- Element (Elemento): Un elemento es una parte de un bloque que no tiene un propósito independiente. 
-    Los elementos se representan en HTML como clases CSS que están anidadas dentro de las clases de bloques 
-    correspondientes. Se utiliza un doble guion bajo __ para separar el bloque del elemento. Por ejemplo:
-    <div class="boton">
-        <span class="boton__texto"></span>
-    </div>
-    3- Modifier (Modificador): Un modificador es una variación o estado de un bloque o elemento. Los 
-    modificadores se representan en HTML como clases CSS adicionales que se agregan a un bloque o elemento 
-    para cambiar su apariencia o comportamiento. Se utiliza un doble guion -- para separar el bloque o 
-    elemento del modificador. Por ejemplo:
-    <div class="boton boton--primario"></div>
-    <div class="formulario formulario--error"></div>
+    - BEM: (Video 57)
+        La metodología BEM se enfoca en proporcionar una estructura de nomenclatura clara y predecible 
+        que hace que el CSS sea más legible y mantenible. Al seguir BEM, es más fácil entender cómo se 
+        relacionan los estilos con los elementos HTML y cómo se pueden reutilizar en diferentes partes 
+        del sitio web sin causar conflictos.
+        Conceptos en BEM:
+        1- Block (Bloque): Un bloque es una entidad independiente y autónoma en tu interfaz de usuario. 
+        Un bloque puede ser cualquier elemento en la página que tenga un propósito específico, como 
+        un encabezado, un menú de navegación, un botón, un formulario, etc. Los bloques se representan 
+        en HTML como clases CSS independientes y se nombran en minúsculas y sin guiones, utilizando 
+        guiones bajos para separar palabras. Por ejemplo:
+            <div class="boton"></div>
+            <nav class="menu-navegacion"></nav>
+            <form class="formulario"></form>
+        2- Element (Elemento): Un elemento es una parte de un bloque que no tiene un propósito independiente. 
+        Los elementos se representan en HTML como clases CSS que están anidadas dentro de las clases de bloques 
+        correspondientes. Se utiliza un doble guion bajo __ para separar el bloque del elemento. Por ejemplo:
+        <div class="boton">
+            <span class="boton__texto"></span>
+        </div>
+        3- Modifier (Modificador): Un modificador es una variación o estado de un bloque o elemento. Los 
+        modificadores se representan en HTML como clases CSS adicionales que se agregan a un bloque o elemento 
+        para cambiar su apariencia o comportamiento. Se utiliza un doble guion -- para separar el bloque o 
+        elemento del modificador. Por ejemplo:
+        <div class="boton boton--primario"></div>
+        <div class="formulario formulario--error"></div>
+
+    - Loading Lazy: (Video 95)
+        loading="lazy" es para cargar las imagenes mientras se vayan a mostrar en la pagina web
+        de lo contrario se mantienen a la espera para mejorar el performance de la web. 
+        <img loading="lazy" src="blogdecafe_inicio/img/blog3.jpg" alt="imagen blog">
+    
+    - Preload: (Video 96)
+        Ejemplo de Preload: 
+            El preload es para que el navegador haga una peticion al servidor para cargar
+            antes que el resto del contenido lo que tenga la etiqueta --Preload--
+            <link rel="--Preload--" href="css/normalize.css" as="style">
+            <link rel="stylesheet" href="css/normalize.css">
+    
+    - Prefetch: (Video 97)
+        Ejemplo de Prefetch:
+            prefetch se aplica cuando sabes que los usuarios que visitan tu pagina web iran 
+            directos a esa pagina y lo que hace es cargarla automaticamente despues del index.hml
+            <link rel="prefetch" href="nosotros.html" as="document">
+
+    - Webp: (Video 98)
+        Ejemplo de webp: 
+            Imagen optimizada para navegadores que consume menos espacio.
+            <source loading="lazy" srcset="blogdecafe_inicio/img/blog3.webp" type="image/webp">
+            <img loading="lazy" src="blogdecafe_inicio/img/blog3.jpg" alt="imagen blog">
+
+    - Modernizr: (Video 99) Webp
+        Modernizr: 
+            Ejecuta un codigo y si no tiene soporte ejecuta el siguiente, asi hasta que 
+            encuentre un codigo que soporte dicho navegador.
+            https://modernizr.com/download?setclasses&q=webp
+            
+            Descarga del archivo para Webp:
+            https://modernizr.com/download?setclasses&q=webp
 
 Video 81 (El proyecto finalizado)
 
@@ -235,5 +268,81 @@ Video 94 (CSS Formulario de contacto)
             </div>
     </form>
 
+Video 95 (Mejorando el performance con Lazy Loading)
+    Ejemplo en HTML: 
+    Con loading="lazy" se carga la imagen en la web cuando se vaya a ver en la pantalla, de lo 
+    contrario se mantiene en espera para mejorar el rendimiento de la web.
+    <img loading="lazy" src="blogdecafe_inicio/img/blog3.jpg" alt="imagen blog">
+
+Video 96 (Mejorando el performance con Preload)
+    Ejemplo de Preload: 
+            El preload es para que el navegador haga una peticion al servidor para cargar
+            antes que el resto del contenido lo que tenga la etiqueta --Preload--
+            <link rel="--Preload--" href="css/normalize.css" as="style">
+            <link rel="stylesheet" href="css/normalize.css">
+
+Video 97 (Mejorando el rendimiento con Prefetch)
+
+        Ejemplo de Prefetch:
+            prefetch se aplica cuando sabes que los usuarios que visitan tu pagina web iran directos
+            a esa pagina y lo que hace es cargarla automaticamente despues del index.hml
+            <link rel="prefetch" href="nosotros.html" as="document">
+
+Video 98 (Mejorando el performance con Imagenes Webp)
+
+    Ejemplo de Webp:
+        <picture>
+            <!--Para agregar Webp (las imagenes pesan menos y cargan mas rapido en la web)-->
+            <source loading="lazy" srcset="blogdecafe_inicio/img/blog3.webp" type="image/webp">
+            
+            <!--Performance codigo con Loading lazy:"" Se carga la imagen si se va a ver en la
+            pantalla de lo contrario se mantiene en espera para mejorar la carga de la pagina web-->
+            <img loading="lazy" src="blogdecafe_inicio/img/blog3.jpg" alt="imagen blog">
+        </picture>
+
+Video 99 (Mejorando el Performance con Modernizr y Webp)
+
+        Modernizr: 
+            Ejecuta un codigo y si no tiene soporte ejecuta el siguiente, asi hasta que 
+            encuentre un codigo que soporte dicho navegador.
+            https://modernizr.com/download?setclasses&q=webp
+
+            Descarga del archivo para webp:
+            https://modernizr.com/download?setclasses&q=webp
+
+            Para agregarl el script: HTML
+            <!--Scripts para Java Script-->
+            <script src="js/modernizr.js"></script>
+
+            Para agregar webp en HTML:
+            <picture>
+                <!--Para agregar Webp (las imagenes pesan menos y cargan mas rapido en la web)-->
+                
+                <source loading="lazy" srcset="blogdecafe_inicio/img/blog2.webp" type="image/webp"/>
+                
+                <!--Performance codigo con Loading lazy:"" Se carga la imagen si se va a ver en la
+                pantalla de lo contrario se mantiene en espera para mejorar la carga de la pagina web-->
+                
+                <img loading="lazy" src="blogdecafe_inicio/img/blog2.jpg" alt="imagen blog"/>
+            </picture>
+
+            Para agregarlo: CSS
+            /** Header **/
+            /*Agregando webp a CSS*/
+            .webp .header {
+                background-image: url(../blogdecafe_inicio/img/banner.webp);
+            }
+            /*Si no soporta webp*/
+            .no-webp .header{
+                background-image: url(../blogdecafe_inicio/img/banner.jpg);
+            }
+Video 100 (Etiqueta meta)
+
+    Etiqueta Meta: HTML
+    <meta name="description" content="Págona web de blog de café">
+
+Video 101 (Deployement y auditoria en el sitio Lighthouse)
+
+        Descargarla en chrome extensiones nombre: Lighthouse
 
 
